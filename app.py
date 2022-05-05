@@ -1,9 +1,5 @@
-import requests
-import pandas as pd
 from flask import Flask, request, jsonify
-import json
 import pickle
-import psycopg2
 
 app = Flask(__name__)
 
@@ -12,14 +8,6 @@ app = Flask(__name__)
 #    'fr': {"fr-chips": 'french fries'},
 #}
 
-# Connect to db
-#conn = psycopg2.connect(host="localhost", port = 5432, database="translate", user="postgres", password="postgres") 
-#cur = conn.cursor()
-
-# Read table
-#details = pd.read_sql_query("SELECT * FROM translation.lang_table;", conn)
-
-
 # get from dict
 # {'en': 'buy-chips'}
 # curl -i http://127.0.0.1:5000/get -X GET -H "Content-Type: application/json" -d "{\"en\": \"buy-chips\"}"
@@ -27,7 +15,6 @@ app = Flask(__name__)
 def query_records():
     if request.is_json:
         name = request.get_json()
-        #name = json.load(str(request.get_json()))
         with open('persistent_store.txt', 'rb') as f:
             data = f.read()
             data = pickle.loads(data)
@@ -52,7 +39,6 @@ def query_records():
 @app.put('/put')
 def create_record():
     if request.is_json:
-        #record = json.loads(request.data)
         record = request.get_json()
         in_lang = list(record.keys())[0]
         data = {}

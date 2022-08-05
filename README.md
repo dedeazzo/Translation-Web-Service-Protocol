@@ -19,18 +19,18 @@ Interacting with API using curl
 
 **Format:** {language_id: key}
 
-**Run:** curl -i http://127.0.0.1:5000/get -X GET -H "Content-Type: application/json" -d "{\"en\": \"buy-chips\"}"
+><code>curl -i http://127.0.0.1:5000/get -X GET -H "Content-Type: application/json" -d "{\"en\": \"buy-chips\"}"</code>
 
 
 **Create new translation**
 
 **Format:** {language_id: {key: key_value, ...}}
 
-**Run:** curl -i http://127.0.0.1:5000/put -X PUT -H "Content-Type: application/json" -d "{\"en\": {\"buy-chips\": \"Buy chips\"}}"
+><code>curl -i http://127.0.0.1:5000/put -X PUT -H "Content-Type: application/json" -d "{\"en\": {\"buy-chips\": \"Buy chips\"}}"</code>
 
 
 **Add translation**
 
 **Format:** {language_id: {key: key_value, ...}}
 
-**Run:** curl -i http://127.0.0.1:5000/post -X POST -H "Content-Type: application/json" -d "{\"en\": {\"buy-chips\": \"Buy chips\"}}"
+><code>curl -i http://127.0.0.1:5000/post -X POST -H "Content-Type: application/json" -d "{\"en\": {\"buy-chips\": \"Buy chips\"}}"<code>

@@ -3,6 +3,8 @@ Simple Flask API protocol for translation web service
 
 ## RUNNING FLASK APP
 
+In terminal:
+
 ><code>set FLASK_APP=app</code>
 
 ><code>set FLASK_ENV=development</code>
